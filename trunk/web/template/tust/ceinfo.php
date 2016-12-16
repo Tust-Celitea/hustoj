@@ -3,6 +3,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title><?php echo $view_title?></title>
 	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
+	<link rel=stylesheet href='bootstrap/css/bootstrap.css' type='text/css'>
+	<script language="javascript" type="text/javascript" src="include/jquery-latest.js"></script>
+	<script language="javascript" type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -151,7 +154,6 @@ exps[56]="参数或表达式没写完";
 
  </script>
 <div id=foot>
-	<?php require_once("oj-footer.php");?>
 <script src=include/jquery-latest.js></script>
 <script>
  $("#source").load("showsource.php?id=<?php echo $id?> #main");
@@ -161,5 +163,6 @@ exps[56]="参数或表达式没写完";
 </div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 </html>
