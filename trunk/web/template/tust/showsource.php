@@ -63,10 +63,9 @@ SyntaxHighlighter.all();
 	}
 ?>
 </div><!--end main-->
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-</div><!--end foot-->
+
 
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 </html>

@@ -149,11 +149,8 @@ echo "<tr id=pie bgcolor=#D7EBFF><td>Statistics<td><div id='PieDiv' style='posit
 
 ?>
 </center>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 </html>

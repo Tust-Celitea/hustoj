@@ -49,11 +49,8 @@
 	<br><br>
 </form>
 
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
-
-</div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 </html>

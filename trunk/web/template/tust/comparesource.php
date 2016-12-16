@@ -8,23 +8,23 @@
 <div id="wrapper">
 	<?php require_once("oj-header.php");?>
 <div id=main>
-	
-<link href='highlight/styles/shCore.css' rel='stylesheet' type='text/css'/> 
-<link href='highlight/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/> 
-<script src='highlight/scripts/shCore.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushCpp.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushCss.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushJava.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushDelphi.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushRuby.js' type='text/javascript'></script> 
+
+<link href='highlight/styles/shCore.css' rel='stylesheet' type='text/css'/>
+<link href='highlight/styles/shThemeDefault.css' rel='stylesheet' type='text/css'/>
+<script src='highlight/scripts/shCore.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushCpp.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushCss.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushJava.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushDelphi.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushRuby.js' type='text/javascript'></script>
 <script src='highlight/scripts/shBrushBash.js' type='text/javascript'></script>
-<script src='highlight/scripts/shBrushPython.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushPhp.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushPerl.js' type='text/javascript'></script> 
-<script src='highlight/scripts/shBrushCSharp.js' type='text/javascript'></script> 
+<script src='highlight/scripts/shBrushPython.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushPhp.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushPerl.js' type='text/javascript'></script>
+<script src='highlight/scripts/shBrushCSharp.js' type='text/javascript'></script>
 <script src='highlight/scripts/shBrushVb.js' type='text/javascript'></script>
 
-<script language='javascript'> 
+<script language='javascript'>
 SyntaxHighlighter.config.bloggerMode = false;
 SyntaxHighlighter.config.clipboardSwf = 'highlight/scripts/clipboard.swf';
 SyntaxHighlighter.all();
@@ -33,15 +33,15 @@ SyntaxHighlighter.all();
 <!-- Requires jQuery -->
   <script language="javascript" type="text/javascript" src="include/jquery-latest.js"></script>
 
-	  
+
 	<!-- Requires CodeMirror 2.16 -->
 	<script type="text/javascript" src="mergely/codemirror.js"></script>
 	<link type="text/css" rel="stylesheet" href="mergely/codemirror.css" />
-	
+
 	<!-- Requires Mergely -->
 	<script type="text/javascript" src="mergely/mergely.js"></script>
 	<link type="text/css" rel="stylesheet" href="mergely/mergely.css" />
-	
+
 	<script type="text/javascript">
 
         $(document).ready(function () {
@@ -72,10 +72,10 @@ SyntaxHighlighter.all();
 
 
 <div id=foot>
-	<?php require_once("oj-footer.php");?>
 
 </div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 </html>
