@@ -22,30 +22,30 @@ header("Pragma: no-cache");
 	$profile="";
 		if (isset($_SESSION['user_id'])){
 				$sid=$_SESSION['user_id'];
-				$profile.= "<i class=icon-user></i><a href=./modifypage.php>$MSG_USERINFO</a>&nbsp;<a href='./userinfo.php?user=$sid'><span id=red>$sid</span></a>";
+				$profile.= "<li><i class=icon-user></i><a href=./modifypage.php>$MSG_USERINFO</a></li><li><a href='./userinfo.php?user=$sid'><span id=red>$sid</span></a></li>";
 				$mail=checkmail();
 				if ($mail)
 					$profile.= "&nbsp;<i class=icon-envelope></i><a href=./mail.php>$mail</a>";
-        $profile.="&nbsp;<a href='./status.php?user_id=$sid'><span id=red>Recent</span></a>";
+        $profile.="&nbsp;<li><a href='./status.php?user_id=$sid'><span id=red>Recent</span></a></li>";
                                 
-				$profile.= "&nbsp;<a href='./logout.php' target='_top' >$MSG_LOGOUT</a>&nbsp;";
+				$profile.= "&nbsp;<li><a href='./logout.php' target='_top' >$MSG_LOGOUT</a></li>";
 			}else{
                 if ($OJ_WEIBO_AUTH){
 				    $profile.= "<a href=./login_weibo.php>$MSG_LOGIN(WEIBO)</a>&nbsp;";
                 }
                 if ($OJ_RR_AUTH){
-				    $profile.= "<a href=./login_renren.php>$MSG_LOGIN(RENREN)</a>&nbsp;";
+				    $profile.= "<li><a href=./login_renren.php>$MSG_LOGIN(RENREN)</a></li>";
                 }
                 if ($OJ_QQ_AUTH){
             $profile.= "<a href=./login_qq.php>$MSG_LOGIN(QQ)</a>&nbsp;";
                 }
-				$profile.= "<a href=./loginpage.php>$MSG_LOGIN</a>&nbsp;";
+				$profile.= "<li><a href=./loginpage.php>$MSG_LOGIN</a></li>";
 				if($OJ_LOGIN_MOD=="hustoj"){
-					$profile.= "<a href=./registerpage.php>$MSG_REGISTER</a>&nbsp;";
+					$profile.= "<li><a href=./registerpage.php>$MSG_REGISTER</a></li>";
 				}
 			}
 			if (isset($_SESSION['administrator'])||isset($_SESSION['contest_creator'])||isset($_SESSION['problem_editor'])){
-           $profile.= "<a href=./admin/>$MSG_ADMIN</a>&nbsp;";
+           $profile.= "<li><a href=./admin/>$MSG_ADMIN</a></li>";
 			
 			}
 		?>

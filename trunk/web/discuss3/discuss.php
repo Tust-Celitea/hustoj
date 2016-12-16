@@ -106,4 +106,3 @@ mysqli_free_result($result);
 </div>
 </center>
 <?php require_once("../template/$OJ_TEMPLATE/discuss.php")?>
-

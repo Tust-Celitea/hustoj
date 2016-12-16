@@ -1,6 +1,6 @@
 @import url(../bootstrap/css/bootstrap.css);
 input{
-   height:24px;
+   // height:24px;
 }
 a {
     color: #1A5CC8;
@@ -51,7 +51,7 @@ h2 {
 body {
     background-color: #FFFFFF;
     background-image: url("../image/background.jpg");
-    font-size:24px;
+    font-size:16px;
     line-height:48px;
 }
 .hd {
