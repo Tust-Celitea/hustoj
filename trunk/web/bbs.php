@@ -1,5 +1,9 @@
+<?php echo '<h1>对不起，该版块暂缓开放<h1> <a href="/">返回主页</a>';
+ die(3);
+ ?>
+
 <?php require_once("./include/db_info.inc.php");
-/* 
+/*
 */
 if(isset($OJ_EXAM_CONTEST_ID)&&$OJ_EXAM_CONTEST_ID>0){
 	header("Content-type: text/html; charset=utf-8");
@@ -19,7 +23,9 @@ else
 if($OJ_BBS=="discuss"){
   echo ("<script>location.href='discuss/discuss.php?".$_SERVER["QUERY_STRING"]."';</script>");
 }else if ($OJ_BBS=="discuss3"){
-   echo ("<script>location.href='discuss3/discuss.php?".$_SERVER["QUERY_STRING"]."';</script>");
+    echo ("<script>location.href='z".$_SERVER["QUERY_STRING"]."';</script>");
+// }else if ($OJ_BBS=="discuss3"){
+//    echo ("<script>location.href='discuss3/discuss.php?".$_SERVER["QUERY_STRING"]."';</script>");
 }else{
 	$url="";
 	if(isset($_GET['pid'])){

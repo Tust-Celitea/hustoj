@@ -309,6 +309,7 @@ return null;
 }
 </style>
 <div id=foot>
+    
         <?php require_once("oj-footer.php");?>
 
 </div><!--end foot-->

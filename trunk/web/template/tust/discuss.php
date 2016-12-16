@@ -15,10 +15,7 @@ require_once("../lang/$OJ_LANG.php");
 
     <title><?php echo $OJ_NAME?></title>
     <?php include("../template/$OJ_TEMPLATE/css.php");?>
-    <link rel=stylesheet href='../bootstrap/css/bootstrap.css' type='text/css'>
-    <script language="javascript" type="text/javascript" src="../include/jquery-latest.js"></script>
-    <script language="javascript" type="text/javascript" src="../include/jquery.flot.js"></script>
-    <script language="javascript" type="text/javascript" src="../bootstrap/js/bootstrap.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,15 +25,12 @@ require_once("../lang/$OJ_LANG.php");
   </head>
 
   <body>
-      <div>
-              <?php require_once("../template/$OJ_TEMPLATE/oj-header.php");?>
-     </div>
 
     <div class="container">
     <?php include("../template/$OJ_TEMPLATE/nav.php");?>
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-	         <?php echo $view_discuss?>
+	<?php echo $view_discuss?>
       </div>
 
     </div> <!-- /container -->

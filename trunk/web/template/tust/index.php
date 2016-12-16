@@ -6,8 +6,9 @@
 
 	<link rel=stylesheet href='bootstrap/css/bootstrap.css' type='text/css'>
 	<script language="javascript" type="text/javascript" src="include/jquery-latest.js"></script>
+	<script language="javascript" type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
     <script language="javascript" type="text/javascript" src="include/jquery.flot.js"></script>
-    <script language="javascript" type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<!-- <script language="javascript" type="text/javascript" src="http://cdn.jsdelivr.net/jquery.flot/0.8.3/jquery.flot.min.js"></script> -->
     <script type="text/javascript">
 $(function () {
     var d1 = [];
@@ -88,6 +89,7 @@ body {
 <!--	<?php echo $view_news?> -->
 <div id=foot>
 
+</div>
 
 </div><!--end foot-->
 </div><!--end main-->

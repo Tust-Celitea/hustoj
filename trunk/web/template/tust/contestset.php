@@ -2,7 +2,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title><?php echo $view_title?></title>
-	<!-- <link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'> -->
+	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
 	<link rel=stylesheet href='bootstrap/css/bootstrap.css' type='text/css'>
 	<script language="javascript" type="text/javascript" src="include/jquery-latest.js"></script>
 	<script language="javascript" type="text/javascript" src="include/jquery.flot.js"></script>
@@ -64,11 +64,11 @@ function clock()
     }
     clock();
 </script>
-<div id=foot>
-	<?php require_once("oj-footer.php");?>
 
-</div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<div id=foot>
+	<?php require_once("oj-footer.php");?>
+</div><!--end foot-->
 </body>
 </html>

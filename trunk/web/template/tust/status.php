@@ -144,11 +144,12 @@ echo "[<a href=status.php?".$str2."&top=".$bottom."&prevtop=$top>Next Page</a>]"
 
 
 <div id=foot>
-        <?php require_once("oj-footer.php");?>
+
 
 </div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
+<?php require_once("oj-footer.php");?>
 </body>
 <script type="text/javascript">
   var i=0;
