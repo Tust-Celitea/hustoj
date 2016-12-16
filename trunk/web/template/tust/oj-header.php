@@ -21,9 +21,7 @@
           <?php echo $MSG_HOME?>
           </a>
         </li>
-          <li>
-              <a  class='btn <?php if ($url==$OJ_BBS.".php") echo " $ACTIVE";?>'  href="bbs.php"><?php echo $MSG_BBS?></a>
-          </li>
+          <!-- <li><a  class='btn <?php if ($url==$OJ_BBS.".php") echo " $ACTIVE";?>'  href="bbs.php"><?php echo $MSG_BBS?></a></li> -->
 
           <li>
               <a  class='btn <?php if ($url=="problemset.php") echo " $ACTIVE";?>' href="problemset.php"><?php echo $MSG_PROBLEMS?></a>
