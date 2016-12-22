@@ -6,7 +6,14 @@
 	<script language="javascript" type="text/javascript" src="include/jquery-latest.js"></script>
     <script language="javascript" type="text/javascript" src="include/jquery.flot.js"></script>
     <script language="javascript" type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-	<link rel=stylesheet href='./template/<?php echo $OJ_TEMPLATE?>/<?php echo isset($OJ_CSS)?$OJ_CSS:"hoj.css" ?>' type='text/css'>
+   <!-- Bootstrap core CSS -->
+    <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="../../bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+ 
      <link rel="next" href="submitpage.php?<?php
 
         if ($pr_flag){
@@ -44,14 +51,15 @@
 	if ($row->spj) echo "&nbsp;&nbsp;<span class=red>Special Judge</span>";
 	echo "<br><span class=green>$MSG_SUBMIT: </span>".$row->submit."&nbsp;&nbsp;";
 	echo "<span class=green>$MSG_SOVLED: </span>".$row->accepted."<br>";
-
-	if ($pr_flag){
-		echo "[<a href='submitpage.php?id=$id'>$MSG_SUBMIT</a>]";
+	
+	echo "<br/>";
+    if ($pr_flag){
+        echo "<a href='submitpage.php?id=$id' class='btn btn-primary btn-lg' role='button'>$MSG_SUBMIT</a>";
 	}else{
-		echo "[<a href='submitpage.php?cid=$cid&pid=$pid&langmask=$langmask'>$MSG_SUBMIT</a>]";
+		echo "<a href='submitpage.php?cid=$cid&pid=$pid&langmask=$langmask'class='btn btn-primary btn-lg' role='button'>$MSG_SUBMIT</a>";
 	}
-	echo "[<a href='problemstatus.php?id=".$row->problem_id."'>$MSG_STATUS</a>]";
-	echo "[<a href='bbs.php?pid=".$row->problem_id."$ucid'>$MSG_BBS</a>]";
+    echo "&nbsp&nbsp<a href='problemstatus.php?id=".$row->problem_id."' class='btn btn-lg btn-success' role='button'>$MSG_STATUS</a>";
+	echo "&nbsp&nbsp<a href='bbs.php?pid=".$row->problem_id."$ucid' class='btn btn-lg btn-info'>$MSG_BBS</a>";
 	  if(isset($_SESSION['administrator'])){
       require_once("include/set_get_key.php");
       ?>
@@ -62,10 +70,25 @@
     }
 
 	echo "</center>";
-
-	echo "<h2>$MSG_Description</h2><div class=content>".$row->description."</div>";
-	echo "<h2>$MSG_Input</h2><div class=content>".$row->input."</div>";
-	echo "<h2>$MSG_Output</h2><div class=content>".$row->output."</div>";
+    echo "<br/>";
+    echo "<div class='container theme-showcase' role='main'><div class='jumbotron'><div class='container'><h2>$MSG_Description</h2><div class=content>".$row->description."</div></div></div></div>";
+    echo '<br/><br/><div class="container theme-showcase"><div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><h2>'.$MSG_Input.'</h2></h3>
+            </div>
+            <div class="panel-body">
+              <h3>'.$row->input.'
+            </h3></div>
+          </div>';
+	
+    echo '<div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title"><h2>'.$MSG_Output.'</h2></h3>
+            </div>
+            <div class="panel-body">
+              <h3>'.$row->output.'</h3>
+            </div>
+          </div>';
 
 
 
@@ -74,20 +97,41 @@
 	$soutput=str_replace("<","&lt;",$row->sample_output);
   $soutput=str_replace(">","&gt;",$soutput);
   if($sinput) {
-      echo "<h2>$MSG_Sample_Input</h2>
-			<pre class=content><span class=sampledata>".($sinput)."</span></pre>";
+    echo '<br/><br/><div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><h2>'.$MSG_Sample_Input.'</h2></h3>
+            </div>
+            <div class="panel-body">
+              <h3>'.$sinput.'</h3>
+            </div>
+          </div>';
   }
   if($soutput){
-	echo "<h2>$MSG_Sample_Output</h2>
-			<pre class=content><span class=sampledata>".($soutput)."</span></pre>";
+	
+    echo '<div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><h2>'.$MSG_Sample_Output.'</h2></h3>
+            </div>
+            <div class="panel-body">
+              <h3>'.$soutput.'</h3>
+            </div>
+          </div>';
   }
   if ($pr_flag||true)
-		echo "<h2>$MSG_HINT</h2>
-			<div class=content><p>".nl2br($row->hint)."</p></div>";
+		
+    echo '<br/><br/><div class="panel panel-warning">
+            <div class="panel-heading">
+              <h3 class="panel-title"><h2>'.$MSG_HINT.'</h2></h3>
+            </div>
+            <div class="panel-body">
+              <h3>'.nl2br($row->hint).'</h3>
+            </div>
+          </div>';
 	if ($pr_flag)
-		echo "<h2>$MSG_Source</h2>
-			<div class=content><p><a href='problemset.php?search=$row->source'>".nl2br($row->source)."</a></p></div>";
+		
+    	echo "<br/><br/><h2>$MSG_Source</h2><p><a href='problemset.php?search=$row->source' class='btn btn-lg btn-success' role='button'>".nl2br($row->source)."</a></p>";
 	echo "<center>";
+	echo "<br/><br/>";
 	if ($pr_flag){
 		echo "[<a href='submitpage.php?id=$id'>$MSG_SUBMIT</a>]";
 	}else{
@@ -96,7 +140,7 @@
 	echo "[<a href='problemstatus.php?id=".$row->problem_id."'>$MSG_STATUS</a>]";
 
 	echo "[<a href='bbs.php?pid=".$row->problem_id."$ucid'>$MSG_BBS</a>]";
-
+	echo "<br/><br/><br/><br/><br/><br/><br/>";
 	if(isset($_SESSION['administrator'])){
       require_once("include/set_get_key.php");
   ?>
@@ -108,6 +152,7 @@
 	?>
 <div id=foot>
 
+</div><!--end showcase>
 </div><!--end foot-->
 </div><!--end main-->
 </div><!--end wrapper-->
