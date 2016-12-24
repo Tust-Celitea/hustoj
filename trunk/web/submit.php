@@ -12,18 +12,18 @@ $user_id=$_SESSION['user_id'];
 if (isset($_POST['cid'])){
 	$pid=intval($_POST['pid']);
 	$cid=intval($_POST['cid']);
-	$sql="SELECT `problem_id` from `contest_problem` 
+	$sql="SELECT `problem_id` from `contest_problem`
 				where `num`='$pid' and contest_id=$cid";
 }else{
 	$id=intval($_POST['id']);
 	$sql="SELECT `problem_id` from `problem` where `problem_id`='$id' and problem_id not in (select distinct problem_id from contest_problem where `contest_id` IN (
-			SELECT `contest_id` FROM `contest` WHERE 
+			SELECT `contest_id` FROM `contest` WHERE
 			(`end_time`>'$now' or private=1)and `defunct`='N'
 			))";
 	if(!isset($_SESSION['administrator']))
 		$sql.=" and defunct='N'";
 }
-//echo $sql;	
+//echo $sql;
 
 $res=mysqli_query($mysqli,$sql);
 if ($res&&mysqli_num_rows($res)<1&&!isset($_SESSION['administrator'])&&!((isset($cid)&&$cid<=0)||(isset($id)&&$id<=0))){
@@ -60,7 +60,7 @@ if (isset($_POST['id'])) {
 		mysqli_free_result($result);
 		if ($isprivate==1&&!isset($_SESSION['c'.$cid])){
 			$sql="SELECT count(*) FROM `privilege` WHERE `user_id`='$user_id' AND `rightstr`='c$cid'";
-			$result=mysqli_query($mysqli,$sql) or die (mysqli_error()); 
+			$result=mysqli_query($mysqli,$sql) or die (mysqli_error());
 			$row=mysqli_fetch_array($result);
 			$ccnt=intval($row[0]);
 			mysqli_free_result($result);
@@ -120,7 +120,7 @@ $append_file="$OJ_DATA/$id/append.$language_ext[$language]";
 if(isset($OJ_APPENDCODE)&&$OJ_APPENDCODE&&file_exists($append_file)){
      $source.=mysqli_real_escape_string($mysqli,"\n".file_get_contents($append_file));
 }
-//end of append 
+//end of append
 
 if($test_run) $id=0;
 
@@ -131,6 +131,7 @@ $len=strlen($source);
 
 
 setcookie('lastlang',$language,time()+360000);
+setcookie('keymap',$keymap,time()+360000);
 
 $ip=$_SERVER['REMOTE_ADDR'];
 
@@ -146,7 +147,7 @@ if ($len>65536){
 }
 
 // last submit
-$now=strftime("%Y-%m-%d %X",time()-10);
+$now=strftime("%Y-%m-%d %X",time()-2);
 $sql="SELECT `in_date` from `solution` where `user_id`='$user_id' and in_date>'$now' order by `in_date` desc limit 1";
 $res=mysqli_query($mysqli,$sql);
 if (mysqli_num_rows($res)==1){
@@ -189,9 +190,9 @@ if(isset($_SESSION['store_id'])) $store_id=$_SESSION['store_id'];
 
 
 	 $statusURI=strstr($_SERVER['REQUEST_URI'],"submit",true)."status.php";
-	 if (isset($cid)) 
+	 if (isset($cid))
 	    $statusURI.="?cid=$cid";
-	    
+
         $sid="";
         if (isset($_SESSION['user_id'])){
                 $sid.=session_id().$_SERVER['REMOTE_ADDR'];
@@ -200,10 +201,10 @@ if(isset($_SESSION['store_id'])) $store_id=$_SESSION['store_id'];
                 $sid.=$statusURI;
         }
    // echo $statusURI."<br>";
-  
+
         $sid=md5($sid);
         $file = "cache/cache_$sid.html";
-    //echo $file;  
+    //echo $file;
     if($OJ_MEMCACHE){
 		$mem = new Memcache;
                 if($OJ_SAE)
@@ -213,15 +214,15 @@ if(isset($_SESSION['store_id'])) $store_id=$_SESSION['store_id'];
                 }
         $mem->delete($file,0);
     }
-	else if(file_exists($file)) 
+	else if(file_exists($file))
 	     unlink($file);
     //echo $file;
-    
+
   $statusURI="status.php?user_id=".$_SESSION['user_id'];
   if (isset($cid))
 	    $statusURI.="&cid=$cid";
-	 
-   if(!$test_run)	
+
+   if(!$test_run)
 	header("Location: $statusURI");
    else{
    	if(isset($_GET['ajax'])){
