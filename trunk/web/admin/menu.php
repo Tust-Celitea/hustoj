@@ -91,13 +91,9 @@ if (isset($OJ_ONLINE)&&$OJ_ONLINE){
 ?>
 
 <li>
-	<a class='btn btn-primary' href="https://github.com/zhblue/hustoj/" target="_blank"><b>HUSTOJ</b></a>
+	<a class='btn btn-primary' href="http://celitea.cn" target="_blank"><b>celitea</b></a>
 <li>
-	<a class='btn btn-primary' href="https://github.com/zhblue/freeproblemset/" target="_blank"><b>FreeProblemSet</b></a>
-<li>
-	<a class='btn btn-primary' href="http://codeup.cn" target="_blank"><b>CodeUP.cn</b></a>
-<li>
-	<a class='btn btn-primary' href="http://codeup.cn" target="_blank">手机QQ加官方群23361372</a>
+	<a class='btn btn-primary' href="http://celitea.cn" target="_blank">手机QQ加官方群xxxxxxxx</a>
 	
 
 
